@@ -7,8 +7,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/projectdiscovery/hmap/store/cache"
-	"github.com/projectdiscovery/hmap/store/disk"
+	"github.com/boy-hack/hmap/store/cache"
+	"github.com/boy-hack/hmap/store/disk"
 )
 
 type MapType int

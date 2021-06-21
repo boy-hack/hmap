@@ -1,4 +1,4 @@
-module github.com/projectdiscovery/hmap
+module github.com/boy-hack/hmap
 
 go 1.14
 

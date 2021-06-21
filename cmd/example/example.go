@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/projectdiscovery/hmap/store/hybrid"
+	"github.com/boy-hack/hmap/store/hybrid"
 )
 
 func main() {
