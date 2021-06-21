@@ -16,6 +16,10 @@ type BBoltDB struct {
 	BucketName string
 }
 
+func (b *BBoltDB) Empty() (bool, error) {
+	panic("implement me")
+}
+
 // OpenBoltDB - Opens the specified path
 func OpenBoltDBB(path string) (*BBoltDB, error) {
 	db, err := bolt.Open(path, 0600, nil)

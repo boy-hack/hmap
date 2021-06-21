@@ -15,6 +15,10 @@ type PogrebDB struct {
 	sync.RWMutex
 }
 
+func (pdb *PogrebDB) Empty() (bool, error) {
+	panic("implement me")
+}
+
 // OpenPogrebDB - Opens the specified path
 func OpenPogrebDB(path string) (*PogrebDB, error) {
 	db, err := pogreb.Open(path, nil)

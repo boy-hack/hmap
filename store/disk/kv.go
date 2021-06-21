@@ -13,6 +13,7 @@ type DB interface {
 	MDel(keys []string) error
 	Del(key string) error
 	Scan(ScannerOpt ScannerOptions) error
+	Empty() (bool, error)
 	Size() int64
 	GC() error
 	Close()

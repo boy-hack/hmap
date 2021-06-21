@@ -15,6 +15,10 @@ type BadgerDB struct {
 	sync.RWMutex
 }
 
+func (bdb *BadgerDB) Empty() (bool, error) {
+	panic("implement me")
+}
+
 // OpenPogrebDB - Opens the specified path
 func OpenBadgerDB(path string) (*BadgerDB, error) {
 	db, err := badger.Open(badger.DefaultOptions(path))

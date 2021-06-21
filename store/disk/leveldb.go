@@ -226,3 +226,21 @@ func (ldb *LevelDB) Scan(scannerOpt ScannerOptions) error {
 
 	return iter.Error()
 }
+
+// empty
+func (ldb *LevelDB) Empty() (bool, error) {
+	var iter iterator.Iterator
+
+	iter = ldb.db.NewIterator(nil, nil)
+
+	isEmpty := true
+
+	for iter.Next() {
+		isEmpty = false
+		break
+	}
+
+	iter.Release()
+
+	return isEmpty, iter.Error()
+}

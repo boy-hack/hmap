@@ -71,6 +71,7 @@ type HybridMap struct {
 	diskmap     disk.DB
 	diskmapPath string
 	memoryguard *memoryguard
+	number      uint64
 }
 
 func New(options Options) (*HybridMap, error) {
@@ -132,6 +133,7 @@ func New(options Options) (*HybridMap, error) {
 	}
 
 	hm.options = &options
+	hm.number = 0
 
 	return &hm, nil
 }
@@ -217,6 +219,9 @@ func (hm *HybridMap) Scan(f func([]byte, []byte) error) {
 
 func (hm *HybridMap) Size() int64 {
 	return 0
+}
+func (hm *HybridMap) Empty() (bool, error) {
+	return hm.diskmap.Empty()
 }
 
 func (hm *HybridMap) TuneMemory() {
